@@ -1,9 +1,9 @@
 --------------------------------------------------------------------------------
 -- Functional Programming (CS141)                                             --
--- Lecture 8: Data types & type aliases                                                     --
+-- Lecture 7: Data types & type aliases                                                     --
 --------------------------------------------------------------------------------
 
-module Lecture8 where
+module Lecture7 where
 
 import Prelude hiding (Maybe(..), filter)
 
@@ -27,10 +27,8 @@ not False = True
 -- Examples of data types
 
 data Module = CS142 | CS118 | CS141
-    deriving (Eq, Ord, Show)
 
 data Language = PHP | JavaScript | CSharp | Haskell
-    deriving (Eq, Ord, Show)
 
 data Unit = Unit
 
