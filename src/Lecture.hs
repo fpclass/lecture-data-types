@@ -1,9 +1,9 @@
 --------------------------------------------------------------------------------
 -- Functional Programming (CS141)                                             --
--- Lecture 7: Data types & type aliases                                                     --
+-- Lecture: Data types & type aliases                                         --
 --------------------------------------------------------------------------------
 
-module Lecture7 where
+module Lecture where
 
 import Prelude hiding (Maybe(..), filter)
 
@@ -103,10 +103,12 @@ type String = [Char]
 
 type Predicate a = a -> Bool
 
-filter :: Predicate a -> [a] -> [a]
-filter p []     = []
-filter p (x:xs)
-    | p x       = x : filter p xs
-    | otherwise =     filter p xs
+-- `Predicate Int` is just an alias for `Int -> Bool`
+isEven :: Predicate Int 
+isEven n = n `mod` 2 == 0
+
+-- `Predicate a` is just an alias for `a -> Bool`
+isEven' :: (Eq a, Integral a) => Predicate a
+isEven' n = n `mod` 2 == 0
 
 --------------------------------------------------------------------------------
